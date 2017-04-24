@@ -1,0 +1,33 @@
+{
+  "name": "nodejs-user-api",
+  "version": "1.0.0",
+  "description": "Ejemplo de Usuario RESTful",
+  "main": "index.js",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rspirolazzi/nodejs-user-api.git"
+  },
+  "keywords": [
+    "user",
+    "api",
+    "restful"
+  ],
+  "author": "Rodrigo Spirolazzi <rspirolazzi@gmail.com> (http://rspirolazzi.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rspirolazzi/nodejs-user-api/issues"
+  },
+  "homepage": "https://github.com/rspirolazzi/nodejs-user-api#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "method-override": "^2.3.8",
+    "mongoose": "^4.9.6"
+  }
+}
