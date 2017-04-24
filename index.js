@@ -2,10 +2,16 @@ var express         = require("express"),
     app             = express(),
     bodyParser      = require("body-parser"),
     methodOverride  = require("method-override"),
-    mongoose        = require('mongoose');
+    mongoose        = require('mongoose')
 
+    ;
+
+let connectionString = 'mongodb://localhost/users'
 // Connection to DB
-mongoose.connect('mongodb://localhost/users', function(err, res) {
+if(process.env.NODE_ENV == 'test'){
+  connectionString+='_test';
+}
+mongoose.connect(connectionString, function(err, res) {
   if(err) throw err;
   console.log('Connected to Database');
 });
@@ -18,8 +24,6 @@ app.use(methodOverride());
 // Import Models and controllers
 var UserApp = require('./app')(app, mongoose, express);
 
-console.log('UserApp', UserApp);
-
 // Example Route
 var router = express.Router();
 router.get('/', function(req, res) {
@@ -31,3 +35,4 @@ app.use(router);
 app.listen(3000, function() {
   console.log("Node server running on *:3000");
 });
+module.exports = app; // for testing
